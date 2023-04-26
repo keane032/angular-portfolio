@@ -1,0 +1,13 @@
+<div class="row">
+    <app-profile-info [userInfo]="userInfo"></app-profile-info>
+    <div>
+        <h1> Texto</h1>
+        <div class="cards">
+            <div class="card" *ngFor="let repo of repos">
+                <p>Titulo:{{repo.name}}</p>
+                Descrição:
+                <p>{{repo. description}}</p>
+                </div>
+        </div>
+    </div>
+</div>
