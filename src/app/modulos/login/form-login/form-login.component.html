@@ -1,7 +1,22 @@
 <div class="main">
-    <img alt="Avatar" src="../../../../assets/github.svg">
+    <img id="gitIcon" alt="Avatar" src="../../../../assets/github.svg">
+    <h2>Github API</h2>
     <form (ngSubmit)="onSubmit()">
         <input [(ngModel)]="name" name="name" type="text" id="name" >
         <button type="submit">PESQUISAR</button>
     </form>
+
+    <div *ngIf="userInfo" class="profilebox">
+        <img id="imgProfile" alt="Avatar" [src]="userInfo.avatar">
+        <div>
+            <h1 class="profile-name">{{userInfo.name}} ({{userInfo.login}})</h1>
+            <h3>{{userInfo.bio}}.</h3>
+            <div class="info">
+                <h3>Seguidores <br/> {{userInfo.followers}}</h3>  
+                <h3>Seguindo <br/> {{userInfo.following}}</h3> 
+                <h3>Repositorios Publicos <br/> {{userInfo.public_repos}}</h3>
+            </div>
+            <button id="repos" type="submit" (click)="navigateTo()">REPOSITORIOS</button>
+        </div>
+    </div>
 </div>

@@ -11,20 +11,37 @@ import { ToastrService } from 'ngx-toastr';
 export class FormLoginComponent {
 
     name: string = '';
+    userData: any;
+    @Input() userInfo: any;
 
     constructor(private service: LoginService,private router: Router, private toastr: ToastrService){}
+
+    navigateTo(){
+      let navigationExtras: NavigationExtras = {
+          queryParams: {
+              "data": JSON.stringify(this.userData)
+          }
+        };
+      this.router.navigate(["home"],  navigationExtras);
+    }
 
     onSubmit(){
       this.service.retrieveByName(this.name).subscribe(
           (res:any)=>{
-            var resp = res;
+
+            this.userData = res
+
+            this.userInfo = {
+              following: res.following,
+              followers: res.followers,
+              login: res.login,
+              name: res.name,
+              avatar: res.avatar_url,
+              bio: res.bio,
+              public_repos: res.public_repos
+            }
+
             this.toastr.success('', 'Usuario Encontrado');
-            let navigationExtras: NavigationExtras = {
-              queryParams: {
-                  "data": JSON.stringify(resp)
-              }
-            };
-            this.router.navigate(["home"],  navigationExtras);
           },
           (err) =>{
             if(err.status == 404){

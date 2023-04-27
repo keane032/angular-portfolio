@@ -3,13 +3,24 @@
   justify-content: center;
 }
 
+.container{
+  justify-content: center;
+  align-items: center;
+}
+
+a{
+  color: aliceblue;
+}
+
 .card{
     padding: 16px;
-    height: 200px;
     border-radius: 10px;
-    background-color: dodgerblue;
+    background-color: rgb(2, 61, 109);
+    color:aliceblue;
     font-size: 20px;
     font-family: monospace;
+    display: flex;
+    justify-content: space-between;
 }
 
 .cards{
@@ -19,9 +30,9 @@
     gap: 16px;
 }
 
-@media (min-width: 600px) {
+/* @media (min-width: 600px) {
     .cards { grid-template-columns: repeat(2, 1fr); }
-  }
+  } */
   /* @media (min-width: 900px) {
     .cards { grid-template-columns: repeat(3, 1fr); }
   } */
