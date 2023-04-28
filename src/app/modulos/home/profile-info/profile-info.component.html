@@ -1,6 +1,8 @@
 <div class="profilebox">
     <img alt="Avatar" [src]="userInfo.avatar">
-    <h1>{{userInfo.name}} ({{userInfo.login}})</h1>
-    <h3>Bio: {{userInfo.bio}}</h3>
-    <h4>Seguidores:{{userInfo.followers}} Seguindo: {{userInfo.following}}</h4>
+    <div class="text">
+        <h1>{{userInfo.name}} ({{userInfo.login}})</h1>
+        <h3>Bio: {{userInfo.bio}}</h3>
+        <h3>Seguidores:{{userInfo.followers}} Seguindo: {{userInfo.following}}</h3>
+    </div>
 </div>

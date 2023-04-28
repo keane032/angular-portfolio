@@ -16,6 +16,10 @@
                 <h3>Seguindo <br/> {{userInfo.following}}</h3> 
                 <h3>Repositorios Publicos <br/> {{userInfo.public_repos}}</h3>
             </div>
+            
+            <img class="resume" alt="{{userInfo.name}} github stats." src="https://github-readme-stats.vercel.app/api?username={{userInfo.login}}&show_icons=true&hide_border=true&theme=dracula" /><br/>
+            <img class="resume" src="https://github-readme-stats.vercel.app/api/top-langs/?username={{userInfo.login}}&layout=compact&theme=dracula" />
+            
             <button id="repos" type="submit" (click)="navigateTo()">REPOSITORIOS</button>
         </div>
     </div>

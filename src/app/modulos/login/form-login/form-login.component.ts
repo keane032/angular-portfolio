@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { LoginService } from '../login.service';
-import { NavigationExtras, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -8,15 +8,25 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './form-login.component.html',
   styleUrls: ['./form-login.component.css']
 })
-export class FormLoginComponent {
+export class FormLoginComponent implements OnInit{
 
     name: string = '';
     userData: any;
     @Input() userInfo: any;
 
-    constructor(private service: LoginService,private router: Router, private toastr: ToastrService){}
+    constructor(private service: LoginService,private router: Router, private toastr: ToastrService, private route: ActivatedRoute){}
+  
+  ngOnInit(): void {
+       this.route.queryParams.subscribe(params => {
+      var data = params["name"];
+      if(data){
+          this.name = data;
+          this.onSubmit();
+      }
+   });
+  }
 
-    navigateTo(){
+  navigateTo(){
       let navigationExtras: NavigationExtras = {
           queryParams: {
               "data": JSON.stringify(this.userData)
