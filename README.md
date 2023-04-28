@@ -1,4 +1,10 @@
 # AngularPortfolio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
+Projeto feito para implementar features e aprender coisas em angular e também servir como portfólio.
+Funções: 
+  -Listar um resumo de infos do github de usuário pelo nick.
+  -Listar repositórios.
+
+
+
 
