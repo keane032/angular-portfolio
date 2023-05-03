@@ -16,8 +16,16 @@ export class FormLoginComponent implements OnInit{
 
     constructor(private service: LoginService,private router: Router, private toastr: ToastrService, private route: ActivatedRoute){}
   
+  click(){
+
+    console.log();
+    window.open(`https://${this.userInfo.blog}`);
+     
+  }
+
   ngOnInit(): void {
-       this.route.queryParams.subscribe(params => {
+
+    this.route.queryParams.subscribe(params => {
       var data = params["name"];
       if(data){
           this.name = data;
@@ -48,7 +56,11 @@ export class FormLoginComponent implements OnInit{
               name: res.name,
               avatar: res.avatar_url,
               bio: res.bio,
-              public_repos: res.public_repos
+              public_repos: res.public_repos,
+              company: res.company,
+              blog: res.blog,
+              location: res.location,
+              email: res.email,
             }
 
             this.toastr.success('', 'Usuario Encontrado');

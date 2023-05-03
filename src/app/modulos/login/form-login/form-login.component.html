@@ -3,11 +3,17 @@
     <h2>Github API</h2>
     <form (ngSubmit)="onSubmit()">
         <input [(ngModel)]="name" name="name" type="text" id="name" >
-        <button type="submit">PESQUISAR</button>
+        <button id="submit" type="submit">PESQUISAR</button>
     </form>
 
     <div *ngIf="userInfo" class="profilebox">
-        <img id="imgProfile" alt="Avatar" [src]="userInfo.avatar">
+        <div class="contact">
+            <img id="imgProfile" alt="Avatar" [src]="userInfo.avatar">
+            <h3 *ngIf="userInfo.comany">Company: {{userInfo.comany}}</h3>
+            <h3 *ngIf="userInfo.blog">Blog: <a id="blog" (click)="click()" href="/">{{userInfo.blog}}</a></h3>
+            <h3 *ngIf="userInfo.location">Location: {{userInfo.location}}</h3>
+            <h3 *ngIf="userInfo.email">Email: {{userInfo.email}}</h3>
+        </div>
         <div>
             <h1 class="profile-name">{{userInfo.name}} ({{userInfo.login}})</h1>
             <h3>{{userInfo.bio}}.</h3>
