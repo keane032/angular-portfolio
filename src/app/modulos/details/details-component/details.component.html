@@ -6,7 +6,7 @@
         <button id="submit" type="submit">PESQUISAR</button>
     </form>
 
-    <div *ngIf="userInfo" class="profilebox">
+    <div id="user" *ngIf="userInfo" class="profilebox">
         <div class="contact">
             <img id="imgProfile" alt="Avatar" [src]="userInfo.avatar">
             <h3 *ngIf="userInfo.comany">Company: {{userInfo.comany}}</h3>
@@ -26,6 +26,21 @@
             <img class="resume" alt="{{userInfo.name}} github stats." src="https://github-readme-stats.vercel.app/api?username={{userInfo.login}}&show_icons=true&hide_border=true&theme=dracula" /><br/>
             <img class="resume" src="https://github-readme-stats.vercel.app/api/top-langs/?username={{userInfo.login}}&layout=compact&theme=dracula" />
             
+            <!-- todo -->
+            <!-- <div *ngIf="userRepos.length > 0">
+                <h2>Projetos</h2>
+                <div *ngFor="let repo of userRepos">
+                    <div class="info">
+                        <p>Titulo: <a [href]="repo.html_url" >{{repo.name}}</a></p>
+                        <p>Stars: {{repo.stargazers_count}}</p>
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <h4>What is Lorem Ipsum?</h4>
+                        Lorem Ipsum is 
+                    </div>
+                </div>
+            </div> -->
+
             <button id="repos" type="submit" (click)="navigateTo()">REPOSITORIOS</button>
         </div>
     </div>

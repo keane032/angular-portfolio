@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Game } from 'src/app/models/Game';
 import { HomeService } from '../home.service';
 
 @Component({
@@ -17,7 +16,6 @@ export class HomeListComponent implements OnInit{
    constructor(private route: ActivatedRoute, private service: HomeService){}
 
   ngOnInit(): void {
-
     this.route.queryParams.subscribe(params => {
       this.data = JSON.parse(params["data"]);
       this.userInfo = {

@@ -1,4 +1,7 @@
-.header{
-    background-color: blue;
-    /* position: absolute; */
+.dark{
+    background-color: black;
+}
+
+.ligth{
+    background-color: aliceblue;
 }
