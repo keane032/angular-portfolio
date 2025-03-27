@@ -16,12 +16,15 @@ import { CustomModule } from './modulos/custom/custom.module';
 import { CustomPageComponent } from './modulos/custom/custom-page/custom-page.component';
 import { SharedComponent } from './modulos/shared/shared/shared.component';
 import { SharedModule } from './modulos/shared/shared.module';
+import { StartedModule } from './modulos/started/started.module';
+import { StartedPageComponent } from './modulos/started/started-page/started-page.component';
 
 const root: Routes = [
   {path:'',component: DeatailsComponent},
   {path:'home',component: HomeListComponent},
   {path:'custom',component: CustomPageComponent},
-  {path:'shared',component: SharedComponent}
+  {path:'shared',component: SharedComponent},
+  {path:'started',component: StartedPageComponent}
 ]
 
 @NgModule({

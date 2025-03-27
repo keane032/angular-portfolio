@@ -28,7 +28,6 @@ export class CustomPageComponent implements OnInit {
 
   onColorClick(color: string): void {
     this.color = color
-    // Faça o que precisar com a cor clicada
   }
 
   ngOnInit(): void {
