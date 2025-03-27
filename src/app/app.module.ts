@@ -12,10 +12,16 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { DeatailsComponent } from './modulos/details/details-component/details.component';
+import { CustomModule } from './modulos/custom/custom.module';
+import { CustomPageComponent } from './modulos/custom/custom-page/custom-page.component';
+import { SharedComponent } from './modulos/shared/shared/shared.component';
+import { SharedModule } from './modulos/shared/shared.module';
 
 const root: Routes = [
   {path:'',component: DeatailsComponent},
-  {path:'home',component: HomeListComponent}
+  {path:'home',component: HomeListComponent},
+  {path:'custom',component: CustomPageComponent},
+  {path:'shared',component: SharedComponent}
 ]
 
 @NgModule({
@@ -27,6 +33,8 @@ const root: Routes = [
     BrowserAnimationsModule,
     HomeModule,
     LoginModule,
+    CustomModule,
+    SharedModule,
     HttpClientModule,
     BrowserModule,
     RouterModule.forRoot(root),

@@ -47,10 +47,10 @@ export class DeatailsComponent implements OnInit{
     navigateTo(){
         let navigationExtras: NavigationExtras = {
             queryParams: {
-                "data": JSON.stringify(this.userData)
+                "name": this.userData.login
             }
           };
-        this.router.navigate(["home"],  navigationExtras);
+        this.router.navigate(["custom"],  navigationExtras);
       }
 
       onSubmit(){

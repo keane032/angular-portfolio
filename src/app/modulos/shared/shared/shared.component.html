@@ -1,0 +1,50 @@
+<div  [ngStyle]="{'background-color': color,  'height': '100vh'}"> 
+  <div class="main">
+  <div style="display: flex; flex-direction: row;">
+  
+</div>
+  <div style="background-color:  rgb(2, 61, 109); border-radius: 10px;
+  color: aliceblue;">
+<div id="user" *ngIf="userInfo" class="profilebox">
+    <div class="contact">
+        <img id="imgProfile" alt="Avatar" [src]="userInfo.avatar">
+        <h3 *ngIf="userInfo.comany">Company: {{userInfo.comany}}</h3>
+        <h3 *ngIf="userInfo.blog">Blog: <a id="blog" (click)="click()" href="/">{{userInfo.blog}}</a></h3>
+        <h3 *ngIf="userInfo.location">Location: {{userInfo.location}}</h3>
+        <h3 *ngIf="userInfo.email">Email: {{userInfo.email}}</h3>
+    </div>
+    <div>
+        <h1 class="profile-name">{{userInfo.name}} ({{userInfo.login}})</h1>
+        <h3>{{userInfo.bio}}.</h3>
+        <div class="info">
+            <h3>Seguidores <br/> {{userInfo.followers}}</h3>  
+            <h3>Seguindo <br/> {{userInfo.following}}</h3> 
+            <h3>Repositorios Publicos <br/> {{userInfo.public_repos}}</h3>
+        </div>
+        
+       
+        <!-- todo -->
+        <h2>Projetos</h2>
+        <div style="display: flex; flex-direction: row;" *ngIf="userRepos.length > 0">
+            <div style=" flex: 50%;" *ngFor="let repo of userRepos">
+                <div class="info">
+                    <p>Titulo: <a [href]="repo.html_url" >{{repo.name}}</a></p>
+                    <p>Stars: {{repo.stargazers_count}}</p>
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <h4>What is Lorem Ipsum?</h4>
+                    Lorem Ipsum is 
+                </div>
+            </div>
+        </div>
+
+      </div>
+  </div>
+  <div style="display: flex; flex-direction: row;">
+      <img class="resume" alt="{{userInfo.name}} github stats." src="https://github-readme-stats.vercel.app/api?username={{userInfo.login}}&show_icons=true&hide_border=true&theme=dracula" /><br/>
+      <img class="resume" src="https://github-readme-stats.vercel.app/api/top-langs/?username={{userInfo.login}}&layout=compact&theme=dracula" />
+  </div> 
+  
+</div>   
+</div>
+</div>
