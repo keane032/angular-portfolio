@@ -10,7 +10,7 @@ import { LoginModule } from './modulos/details/details.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './shared/header/header.component';
 import { DeatailsComponent } from './modulos/details/details-component/details.component';
 import { CustomModule } from './modulos/custom/custom.module';
 import { CustomPageComponent } from './modulos/custom/custom-page/custom-page.component';
@@ -26,16 +26,13 @@ const root: Routes = [
   {path:'shared',component: SharedComponent},
   {path:'started',component: StartedPageComponent}
 ]
-
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
   ],
   imports: [
     BrowserAnimationsModule,
     HomeModule,
-    LoginModule,
     CustomModule,
     SharedModule,
     HttpClientModule,

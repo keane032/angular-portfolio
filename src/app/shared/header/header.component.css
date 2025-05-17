@@ -1,0 +1,12 @@
+header {
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  height: 50px;
+  justify-content: end;
+  align-items: center;
+}
+    
+button{
+  height: 20px;
+}
